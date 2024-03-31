@@ -29,7 +29,6 @@ import { menuList } from '@/constants';
 .menu:hover,
 .menu.router-link-active,
 .menu.router-link-exact-active {
-  /* color: white; */
   @apply text-white cursor-pointer;
 }
 .menu.router-link-active,
