@@ -1,9 +1,9 @@
 <template>
   <section class="flex size-full flex-col gap-10 text-white">
-    <h1 class="text-3xl font-bold">Home</h1>
+    <h1 class="text-3xl font-bold">Personal Room</h1>
   </section>
 </template>
 
-<script setup></script>
+<script setup lang="ts"></script>
 
 <style scoped></style>

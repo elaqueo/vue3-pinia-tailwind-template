@@ -1,5 +1,5 @@
 {
-  "name": "social-app",
+  "name": "@vll/ui",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -9,15 +9,24 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "lucide-vue": "^0.363.0",
+    "lucide-vue-next": "^0.363.0",
     "pinia": "^2.0.13",
+    "radix-vue": "^1.6.0",
+    "tailwind-merge": "^2.2.2",
+    "tailwindcss-animate": "^1.0.7",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
   "devDependencies": {
+    "@internationalized/date": "^3.5.2",
     "@vitejs/plugin-vue": "^2.3.1",
     "autoprefixer": "^10.4.5",
     "postcss": "^8.4.13",
     "tailwindcss": "^3.0.24",
-    "vite": "^2.9.5"
+    "vite": "^2.9.5",
+    "vite-plugin-mkcert": "^1.17.5"
   }
 }
