@@ -1,10 +1,28 @@
+<style scoped></style>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { Calendar, Plus, UserPlus, Video } from 'lucide-vue-next';
+import MeetingCard from './MeetingCard.vue';
+import MeetingModal from './MeetingModal.vue';
+
+const router = useRouter();
+
+const meetingState = ref<
+  'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined
+>();
+
+const createMeeting = () => {};
+</script>
+
 <template>
   <section class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
     <MeetingCard
       title="New Meeting"
       description="Start an instant meeting"
       bg-color="bg-orange-500"
-      @on-click="meetingState = 'isJoiningMeeting'"
+      @on-click="meetingState = 'isInstantMeeting'"
     >
       <template #icon>
         <Plus :size="27" />
@@ -43,20 +61,15 @@
         <UserPlus :size="27" />
       </template>
     </MeetingCard>
+
+    <MeetingModal
+      :isOpen="meetingState === 'isInstantMeeting'"
+      @on-close="meetingState = undefined"
+      @on-click="createMeeting"
+      title="Start an Instant Meeting"
+      class="text-center"
+      buttonText="Start Meeting"
+    >
+    </MeetingModal>
   </section>
 </template>
-
-<script setup lang="ts">
-import { useRouter } from 'vue-router';
-import { Calendar, Plus, UserPlus, Video } from 'lucide-vue-next';
-import MeetingCard from './MeetingCard.vue';
-import { ref } from 'vue';
-
-const router = useRouter();
-
-const meetingState = ref<
-  'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined
->();
-</script>
-
-<style scoped></style>
