@@ -17,10 +17,14 @@
         </div>
       </div>
     </div>
+
+    <Meetings />
   </section>
 </template>
 
 <script setup>
+import Meetings from '@/components/meetings/Meetings.vue';
+
 const now = new Date();
 
 const time = now.toLocaleTimeString('es-AR', {
