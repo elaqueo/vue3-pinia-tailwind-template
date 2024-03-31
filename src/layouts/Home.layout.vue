@@ -1,5 +1,5 @@
 <template>
-  <div class="relative bg-dark-2">
+  <div class="relative bg-dark-2 rounedd-tl-lg">
     <Navbar></Navbar>
 
     <div class="flex">
