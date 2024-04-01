@@ -9,4 +9,11 @@ export const getUsers = async () => {
   console.log(data);
   return data;
 };
+
+export const createMeeting = async () => {
+  const { data } = await app.meetings.post();
+
+  console.log(data);
+  return data;
+};
 // Get data from /user/617

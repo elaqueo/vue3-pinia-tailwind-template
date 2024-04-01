@@ -4,6 +4,7 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { Calendar, Plus, UserPlus, Video } from 'lucide-vue-next';
+import { createMeeting as callCreateMeeting } from '@/lib/api';
 import MeetingCard from './MeetingCard.vue';
 import MeetingModal from './MeetingModal.vue';
 
@@ -13,7 +14,15 @@ const meetingState = ref<
   'isScheduleMeeting' | 'isJoiningMeeting' | 'isInstantMeeting' | undefined
 >();
 
-const createMeeting = () => {};
+const createMeeting = async () => {
+  const newMeeting = await callCreateMeeting();
+  if (!newMeeting) {
+    alert('No se pudo crear la reunion');
+    return;
+  }
+  console.log({ newMeeting });
+  router.push({ name: 'meeting', params: { id: newMeeting.id } });
+};
 </script>
 
 <template>

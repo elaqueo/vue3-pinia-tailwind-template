@@ -1,13 +1,11 @@
 <template>
-  <div class="bg-dark-2">
-    <Navbar></Navbar>
-    <router-view></router-view>
+  <div class="bg-dark-2 flex flex-col h-screen">
+    <router-view class="flex-1"></router-view>
     <Footer></Footer>
   </div>
 </template>
 
 <script setup>
-import Navbar from '@/components/navbar/Navbar.vue';
 import Footer from '@/components/footer/Footer.vue';
 </script>
 
